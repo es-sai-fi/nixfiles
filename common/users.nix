@@ -1,8 +1,7 @@
 {
   users.mutableUsers = false;
   users.users.es-sai-fi = {
-    name = "es-sai-fi";
-    description = "es-sai-fi";
+    hashedPasswordFile = ../secrets/password.txt;
     isNormalUser = true;
     extraGroups = [
       "networkmanager"
