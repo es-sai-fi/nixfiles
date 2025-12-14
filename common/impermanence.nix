@@ -41,6 +41,7 @@
     directories = [
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/flatpak"
       "/var/lib/systemd/coredump"
       "/var/lib/systemd/timers"
       "/etc/NetworkManager/system-connections"
@@ -57,13 +58,11 @@
         ".config"
         ".firefox"
         ".mozilla"
-        ".var"
         {
           directory = ".ssh";
           mode = "0700";
         }
         ".local/state/wireplumber"
-        ".local/share/flatpak"
         ".local/share/containers"
         ".local/share/fish"
         ".local/share/sleepy-launcher"

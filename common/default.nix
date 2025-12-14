@@ -5,6 +5,7 @@
   inputs,
 }: {
   imports = [
+    (import ./services {inherit lib inputs;})
     (import ./boot.nix {inherit pkgs;})
     (import ./packages.nix {inherit pkgs;})
     (import ./programs {inherit system pkgs lib inputs;})
