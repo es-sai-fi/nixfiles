@@ -7,6 +7,11 @@
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
+    impermanence = {
+      type = "github";
+      owner = "nix-community";
+      repo = "impermanence";
+    };
     aagl = {
       type = "github";
       owner = "ezKEa";
@@ -61,6 +66,7 @@
         modules = [
           ./hosts/desktop
           (import ./common {inherit system pkgs lib inputs;})
+          inputs.impermanence.nixosModules.default
         ];
       };
     };
