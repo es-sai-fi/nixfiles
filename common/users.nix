@@ -1,9 +1,9 @@
 {
   users.mutableUsers = false;
-
   users.users.es-sai-fi = {
-    isNormalUser = true;
+    name = "es-sai-fi";
     description = "es-sai-fi";
+    isNormalUser = true;
     extraGroups = [
       "networkmanager"
       "wheel"
