@@ -9,11 +9,11 @@
     (import ./boot.nix {inherit pkgs;})
     (import ./packages.nix {inherit pkgs;})
     (import ./programs {inherit system pkgs lib inputs;})
+    ./environment.nix
     ./networking.nix
     ./nix.nix
     ./security.nix
     ./users.nix
-    ./variables.nix
     ./virtualisation.nix
   ];
 }

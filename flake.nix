@@ -74,7 +74,7 @@
         inherit system;
         modules = [
           (import ./common {inherit system pkgs lib inputs;})
-          (import ./hosts/seer {inherit lib;})
+          (import ./hosts/seer {inherit lib inputs;})
         ];
       };
     };
