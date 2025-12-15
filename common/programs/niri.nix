@@ -1,9 +1,16 @@
-{pkgs}: let
-  niriWrapped = import ../wrappers/niri {inherit pkgs;};
+{
+  pkgs,
+  niriModule,
+  niriPackage,
+  xwaylandPackage,
+}: let
+  niriWrapped = import ../wrappers/niri {inherit pkgs niriPackage;};
 in {
+  imports = [niriModule];
+
   environment.systemPackages = with pkgs; [
     nautilus
-    xwayland-satellite
+    xwaylandPackage
   ];
 
   xdg.portal = {

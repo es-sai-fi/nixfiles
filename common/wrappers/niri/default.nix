@@ -1,14 +1,25 @@
-{pkgs}:
+{
+  pkgs,
+  niriPackage,
+}:
 pkgs.symlinkJoin {
   name = "niri-wrapped";
-  paths = [pkgs.niri];
+  paths = [niriPackage];
+  passthru = {
+    inherit
+      (niriPackage)
+      cargoBuildNoDefaultFeatures
+      cargoBuildFeatures
+      providedSessions
+      ;
+  };
   buildInputs = [pkgs.makeWrapper];
   postBuild = ''
-    mkdir $out/niri
+    mkdir -p $out/niri
     cp ${./config.kdl} $out/niri/config.kdl
 
     wrapProgram $out/bin/niri \
       --set NIRI_CONFIG $out/niri
   '';
-  meta.mainProgram = "niri";
+  meta = niriPackage.meta;
 }
