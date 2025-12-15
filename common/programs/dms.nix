@@ -3,16 +3,12 @@
   pkgs,
   dmsPackage,
   dgopPackage,
-}: let
-  dmsWrapped = import ../wrappers/dms.nix {
-    inherit pkgs dmsPackage;
-  };
-in {
+}: {
   environment.systemPackages = [dgopPackage];
 
   programs.dms-shell = {
     enable = true;
-    package = dmsWrapped;
+    package = dmsPackage;
     systemd.restartIfChanged = true;
     enableVPN = false;
     enableSystemSound = false;
