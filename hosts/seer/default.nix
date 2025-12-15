@@ -1,5 +1,13 @@
 {
-  imports = [./hardware-configuration.nix ./graphics.nix];
+  lib,
+  impermanence,
+}: {
+  imports = [
+    (import ./impermanence.nix {inherit lib;})
+    ./hardware-configuration.nix
+    ./graphics.nix
+    impermanence.nixosModules.default
+  ];
 
   networking.hostName = "seer";
 

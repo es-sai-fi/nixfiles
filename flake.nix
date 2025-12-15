@@ -73,9 +73,8 @@
       seer = lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/seer
           (import ./common {inherit system pkgs lib inputs;})
-          inputs.impermanence.nixosModules.default
+          (import ./hosts/seer {inherit lib;})
         ];
       };
     };
