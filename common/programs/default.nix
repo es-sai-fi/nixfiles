@@ -4,16 +4,14 @@
   lib,
   inputs,
 }: let
-  inherit (inputs) aagl helix;
-  dmsPackage = inputs.dms.packages.${system}.default;
-  dgopPackage = inputs.dgop.packages.${system}.default;
+  inherit (inputs) aagl dms helix;
 in {
   imports = [
     (import ./aagl.nix {inherit aagl;})
     (import ./alacritty.nix {inherit pkgs;})
     (import ./bat.nix {inherit pkgs;})
     (import ./bottom.nix {inherit pkgs;})
-    (import ./dms.nix {inherit system pkgs dmsPackage dgopPackage;})
+    (import ./dms.nix {inherit system pkgs dms;})
     (import ./fish.nix {inherit pkgs;})
     (import ./fzf.nix {inherit pkgs;})
     (import ./git.nix {inherit pkgs;})

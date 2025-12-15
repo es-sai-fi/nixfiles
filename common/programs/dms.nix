@@ -1,18 +1,19 @@
 {
   system,
   pkgs,
-  dmsPackage,
-  dgopPackage,
+  dms,
 }: {
-  environment.systemPackages = [dgopPackage];
+  imports = [dms.nixosModules.dankMaterialShell];
 
   programs.dms-shell = {
     enable = true;
-    package = dmsPackage;
-    systemd.restartIfChanged = true;
+    systemd = {
+      enable = true;
+      restartIfChanged = true;
+    };
+    enableSystemMonitoring = true;
     enableVPN = false;
     enableSystemSound = false;
-    enableSystemMonitoring = false; # We use a custom dgop package.
     enableDynamicTheming = false;
     enableColorPicker = false;
     enableClipboard = false;
