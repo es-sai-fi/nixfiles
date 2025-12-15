@@ -23,6 +23,7 @@ in {
     (import ./yazi.nix {inherit pkgs lib;})
     ./dconf.nix
     ./nh.nix
+    ./pay-respects.nix
     ./starship.nix
     ./zoxide.nix
   ];
