@@ -17,6 +17,7 @@ in {
     (import ./bottom.nix {inherit pkgs;})
     (import ./dms.nix {inherit system pkgs dmsModule;})
     (import ./fish.nix {inherit pkgs;})
+    (import ./firefox.nix {inherit pkgs;})
     (import ./fzf.nix {inherit pkgs;})
     (import ./git.nix {inherit pkgs;})
     (import ./helix.nix {inherit system pkgs lib helix;})
