@@ -1,7 +1,6 @@
 {pkgs}: {
   programs.fish = {
     enable = true;
-    #package = import ../wrappers/fish {inherit pkgs;};
     useBabelfish = true;
     interactiveShellInit = ''
       set fish_greeting
