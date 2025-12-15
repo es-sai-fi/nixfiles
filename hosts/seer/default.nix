@@ -3,7 +3,7 @@
   impermanence,
 }: {
   imports = [
-    (import ./impermanence.nix {inherit lib;})
+    #(import ./impermanence.nix {inherit lib;})
     ./hardware-configuration.nix
     ./graphics.nix
     impermanence.nixosModules.default

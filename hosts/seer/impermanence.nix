@@ -1,28 +1,4 @@
 {lib}: {
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "btrfs";
-    options = ["subvol=root" "ssd" "noatime"];
-  };
-
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "btrfs";
-    options = ["subvol=nix" "compress=zstd" "ssd" "noatime"];
-  };
-
-  fileSystems."/persist" = {
-    device = "/dev/disk/by-label/nixos";
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = ["subvol=persist" "compress=zstd" "ssd" "noatime"];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
-    fsType = "vfat";
-  };
-
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/disk/by-label/nixos /btrfs_tmp
