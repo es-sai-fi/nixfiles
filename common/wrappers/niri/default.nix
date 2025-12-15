@@ -21,5 +21,5 @@ pkgs.symlinkJoin {
     wrapProgram $out/bin/niri \
       --set NIRI_CONFIG $out/niri
   '';
-  meta = niriPackage.meta;
+  meta.mainProgram = "niri";
 }
