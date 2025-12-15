@@ -149,7 +149,11 @@
         auto-format = true;
         formatter = {
           command = "biome";
-          args = ["format" "--write"];
+          args = [
+            "format"
+            "--stdin-file-path"
+            "%{buffer_name}"
+          ];
         };
       }
       {
@@ -158,7 +162,11 @@
         auto-format = true;
         formatter = {
           command = "biome";
-          args = ["format" "--write"];
+          args = [
+            "format"
+            "--stdin-file-path"
+            "%{buffer_name}"
+          ];
         };
       }
       {
@@ -166,7 +174,11 @@
         auto-format = true;
         formatter = {
           command = "biome";
-          args = ["format" "--write"];
+          args = [
+            "format"
+            "--stdin-file-path"
+            "%{buffer_name}"
+          ];
         };
       }
       {
@@ -174,7 +186,11 @@
         auto-format = true;
         formatter = {
           command = "biome";
-          args = ["format" "--write"];
+          args = [
+            "format"
+            "--stdin-file-path"
+            "%{buffer_name}"
+          ];
         };
       }
       {

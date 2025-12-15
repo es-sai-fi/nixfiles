@@ -22,6 +22,21 @@
         "type": "github"
       }
     },
+    "declarative-flatpak": {
+      "locked": {
+        "lastModified": 1763835632,
+        "narHash": "sha256-6q7bnvI8OawJsG6z8fnPxrvU91221AsMBfsUAepoFvM=",
+        "owner": "in-a-dil-emma",
+        "repo": "declarative-flatpak",
+        "rev": "8580e2112e41814344cfd27973248af89a169886",
+        "type": "github"
+      },
+      "original": {
+        "owner": "in-a-dil-emma",
+        "repo": "declarative-flatpak",
+        "type": "github"
+      }
+    },
     "dgop": {
       "inputs": {
         "nixpkgs": [
@@ -176,21 +191,6 @@
         "type": "github"
       }
     },
-    "nix-flatpak": {
-      "locked": {
-        "lastModified": 1754777568,
-        "narHash": "sha256-0bBqT+3XncgF8F03RFAamw9vdf0VmaDoIJLTGkjfQZs=",
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "rev": "62f636b87ef6050760a8cb325cadb90674d1e23e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1744536153,
@@ -264,12 +264,12 @@
     "root": {
       "inputs": {
         "aagl": "aagl",
+        "declarative-flatpak": "declarative-flatpak",
         "dgop": "dgop",
         "dms": "dms",
         "helix": "helix",
         "impermanence": "impermanence",
         "niri": "niri",
-        "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2"
       }
     },

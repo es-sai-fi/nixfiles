@@ -43,31 +43,22 @@
       default = let
         helixWrapped = import ../common/wrappers/helix.nix {
           inherit pkgs;
-          helix = inputs.helix.packages.${system}.default;
+          helixPackage = inputs.helix.packages.${system}.default;
           lib = pkgs.lib;
         };
-
         bottomWrapped = import ../common/wrappers/bottom.nix {
           inherit pkgs;
         };
-
         yaziWrapped = import ../common/wrappers/yazi {
           inherit pkgs;
           lib = pkgs.lib;
         };
-
-        fishWrapped = import ../common/wrappers/fish {
-          inherit pkgs;
-        };
-
         alacrittyWrapped = import ../common/wrappers/alacritty.nix {
           inherit pkgs;
         };
-
         batWrapped = import ../common/wrappers/bat.nix {
           inherit pkgs;
         };
-
         tealdeerWrapped = import ../common/wrappers/tealdeer.nix {
           inherit pkgs;
         };
@@ -83,7 +74,6 @@
             alacrittyWrapped
             batWrapped
             bottomWrapped
-            fishWrapped
             helixWrapped
             tealdeerWrapped
             yaziWrapped
@@ -93,7 +83,7 @@
       helix = let
         helixWrapped = import ../common/wrappers/helix.nix {
           inherit pkgs;
-          helix = inputs.helix.packages.system.default;
+          helixPackage = inputs.helix.packages.${system}.default;
           lib = pkgs.lib;
         };
       in
@@ -123,28 +113,15 @@
             yaziWrapped
           ];
         };
-      fish = let
-        fishWrapped = import ../common/wrappers/fish {
-          inherit pkgs;
-        };
-      in
-        pkgs.mkShellNoCC {
-          packages = [
-            fishWrapped
-          ];
-        };
       alacritty = let
         alacrittyWrapped = import ../common/wrappers/alacritty.nix {
-          inherit pkgs;
-        };
-        fishWrapped = import ../common/wrappers/fish {
           inherit pkgs;
         };
       in
         pkgs.mkShellNoCC {
           packages = [
             alacrittyWrapped
-            fishWrapped
+            pkgs.fish
           ];
         };
       bat = let
