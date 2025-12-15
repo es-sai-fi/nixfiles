@@ -19,7 +19,7 @@ pkgs.symlinkJoin {
     cp ${./config.kdl} $out/niri/config.kdl
 
     wrapProgram $out/bin/niri \
-      --set NIRI_CONFIG $out/niri
+      --set NIRI_CONFIG $out/niri/config.kdl
   '';
   meta.mainProgram = "niri";
 }
