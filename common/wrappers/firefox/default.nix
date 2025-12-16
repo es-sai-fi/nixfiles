@@ -1,3 +1,4 @@
+# robbed from llakala like most of the stuff in this config lmfao
 {pkgs}:
 pkgs.wrapFirefox pkgs.firefox-unwrapped {
   extraPoliciesFiles =
