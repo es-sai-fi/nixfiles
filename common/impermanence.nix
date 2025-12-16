@@ -31,13 +31,10 @@
         "Pictures"
         "Documents"
         "Projects"
-        ".config"
-        ".firefox"
+        "nixfiles"
         ".mozilla"
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
+        ".config/DankMaterialShell"
+        ".config/fish"
         ".local/state/wireplumber"
         ".local/share/containers"
         ".local/share/fish"
@@ -46,6 +43,10 @@
         ".local/share/anime-game-launcher"
         ".local/share/zoxide"
         ".local/share/honkers-railway-launcher"
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
         {
           directory = ".local/share/keyrings";
           mode = "0700";
