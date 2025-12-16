@@ -13,10 +13,12 @@ in {
     (import ./packages.nix {inherit pkgs;})
     (import ./programs {inherit system pkgs lib inputs;})
     ./environment.nix
+    ./locale.nix
     ./networking.nix
     ./nix.nix
     ./security.nix
     ./users.nix
     ./virtualisation.nix
+    ./xdg.nix
   ];
 }
