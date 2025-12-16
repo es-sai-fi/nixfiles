@@ -1,4 +1,9 @@
-{lib}: {
+{
+  lib,
+  impermanenceModule,
+}: {
+  imports = [impermanenceModule];
+
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/disk/by-label/nixos /btrfs_tmp
