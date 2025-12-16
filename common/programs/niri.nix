@@ -1,12 +1,15 @@
 {
   pkgs,
   niriModule,
+  niriOverlay,
   niriPackage,
   xwaylandPackage,
 }: let
   niriWrapped = import ../wrappers/niri {inherit pkgs niriPackage;};
 in {
   imports = [niriModule];
+
+  nixpkgs.overlays = [niriOverlay];
 
   environment.systemPackages = with pkgs; [
     nautilus
