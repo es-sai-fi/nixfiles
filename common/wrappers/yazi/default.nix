@@ -4,7 +4,7 @@
 }: let
   toml = pkgs.formats.toml {};
   yaziConfigFile = toml.generate "yazi-config.toml" {
-    mgs = {
+    mgr = {
       show_hidden = true;
       sort_by = "mtime";
       sort_dir_first = true;
