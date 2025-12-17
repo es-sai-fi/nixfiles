@@ -42,6 +42,7 @@
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
+      "/var/lib/sbctl"
       "/var/lib/nixos"
       "/var/lib/flatpak"
       "/var/lib/systemd/coredump"
