@@ -17,7 +17,7 @@ in {
     (import ./alacritty.nix {inherit pkgs;})
     (import ./bat.nix {inherit pkgs;})
     (import ./bottom.nix {inherit pkgs;})
-    (import ./dms.nix {inherit system pkgs lib dmsModule greeterModule;})
+    (import ./dms.nix {inherit system pkgs dmsModule greeterModule;})
     (import ./fish.nix {inherit pkgs;})
     (import ./firefox.nix {inherit pkgs;})
     (import ./fzf.nix {inherit pkgs;})
