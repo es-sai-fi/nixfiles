@@ -3,10 +3,10 @@
     mutableUsers = false;
     users = {
       root = {
-        hashedPassword = "";
+        hashedPassword = "$2b$05$x9mbVevzumb8joETyX4bo.w68MAVkCZtEsPBqwF8f8t75PmAZlziu";
       };
       es-sai-fi = {
-        hashedPassword = "";
+        hashedPassword = "$2b$05$6gW1wCrbGjzcxFxxmVGE/ey.mt5BsMOEXsId4vlEX9PbVMbpKb.IC";
         isNormalUser = true;
         extraGroups = [
           "networkmanager"
