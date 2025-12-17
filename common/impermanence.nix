@@ -20,7 +20,7 @@
 
         # We first mount the BTRFS root to /mnt
         # so we can manipulate btrfs subvolumes.
-        mount -o subvol=/ /dev/dis/by-label/nixos /mnt
+        mount -o subvol=/ /dev/disk/by-label/nixos /mnt
 
         # While we're tempted to just delete /root and create
         # a new snapshot from /root-blank, /root is already
