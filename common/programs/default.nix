@@ -6,6 +6,7 @@
 }: let
   inherit (inputs) aagl dms helix niri;
   dmsModule = dms.nixosModules.dankMaterialShell;
+  greeterModule = dms.nixosModules.greeter;
   niriModule = niri.nixosModules.niri;
   niriOverlay = niri.overlays.niri;
   niriPackage = niri.packages.${system}.niri-unstable;
@@ -16,7 +17,7 @@ in {
     (import ./alacritty.nix {inherit pkgs;})
     (import ./bat.nix {inherit pkgs;})
     (import ./bottom.nix {inherit pkgs;})
-    (import ./dms.nix {inherit system pkgs dmsModule;})
+    (import ./dms.nix {inherit system pkgs dmsModule greeterModule;})
     (import ./fish.nix {inherit pkgs;})
     (import ./firefox.nix {inherit pkgs;})
     (import ./fzf.nix {inherit pkgs;})
