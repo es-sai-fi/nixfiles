@@ -16,6 +16,7 @@
       fd
       jq
       wl-clipboard
+      smartmontools
 
       ffmpeg-full
       obs-cmd
