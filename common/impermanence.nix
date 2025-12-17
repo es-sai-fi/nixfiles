@@ -4,18 +4,51 @@
 }: {
   imports = [impermanenceModule];
 
-  boot.initrd.postResumeCommands = lib.mkAfter ''
-    mkdir /btrfs_tmp
-    mount /dev/disk/by-label/nixos /btrfs_tmp
+  # Taken from raf
+  boot.initrd.systemd = {
+    enable = true;
+    services.rollback = {
+      description = "Rollback BTRFS root subvolume to a pristine state";
+      wantedBy = ["initrd.target"];
 
-    if [[ -e /btrfs_tmp/root ]]; then
-      btrfs subvolume delete /btrfs_tmp/root
-    fi
+      before = ["sysroot.mount"];
 
-    btrfs subvolume create /btrfs_tmp/root
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig.Type = "oneshot";
+      script = ''
+        mkdir -p /mnt
 
-    umount /btrfs_tmp
-  '';
+        # We first mount the BTRFS root to /mnt
+        # so we can manipulate btrfs subvolumes.
+        mount -o subvol=/ /dev/dis/by-label/nixos /mnt
+
+        # While we're tempted to just delete /root and create
+        # a new snapshot from /root-blank, /root is already
+        # populated at this point with a number of subvolumes,
+        # which makes `btrfs subvolume delete` fail.
+        # So, we remove them first.
+        #
+        # /root contains subvolumes:
+        # - /root/var/lib/portables
+        # - /root/var/lib/machines
+
+        btrfs subvolume list -o /mnt/root |
+          cut -f9 -d' ' |
+          while read subvolume; do
+            echo "deleting /$subvolume subvolume..."
+            btrfs subvolume delete "/mnt/$subvolume"
+          done &&
+          echo "deleting /root subvolume..." &&
+          btrfs subvolume delete /mnt/root
+        echo "restoring blank /root subvolume..."
+        btrfs subvolume snapshot /mnt/root-blank /mnt/root
+
+        # Once we're done rolling back to a blank snapshot,
+        # we can unmount /mnt and continue on the boot process.
+        umount /mnt
+      '';
+    };
+  };
 
   environment.persistence."/persist" = {
     hideMounts = true;
@@ -37,9 +70,11 @@
         "Documents"
         "Projects"
         "nixfiles"
+        ".cache/nix"
         ".mozilla"
         ".config/DankMaterialShell"
         ".config/fish"
+        ".local/state/DankMaterialShell"
         ".local/state/wireplumber"
         ".local/share/containers"
         ".local/share/fish"
