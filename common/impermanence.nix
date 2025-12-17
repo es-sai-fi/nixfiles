@@ -54,6 +54,7 @@
     users.es-sai-fi = {
       directories = [
         "Downloads"
+        "Videos"
         "Pictures"
         "Documents"
         "Projects"
@@ -62,6 +63,7 @@
         ".mozilla"
         ".config/DankMaterialShell"
         ".config/fish"
+        ".config/obs-studio"
         ".local/state/DankMaterialShell"
         ".local/state/wireplumber"
         ".local/share/containers"
