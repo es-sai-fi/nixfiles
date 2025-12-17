@@ -8,42 +8,28 @@
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
-    home-manager = {
+
+    impermanence = {
       type = "github";
       owner = "nix-community";
-      repo = "home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      repo = "impermanence";
     };
+
     aagl = {
       type = "github";
       owner = "ezKEa";
       repo = "aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri-flake = {
-      type = "github";
-      owner = "sodiboo";
-      repo = "niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-flake = {
-      type = "github";
-      owner = "es-sai-fi";
-      repo = "neovim-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-flatpak = {
-      type = "github";
-      owner = "gmodena";
-      repo = "nix-flatpak";
-    };
+
     dgop = {
       type = "github";
       owner = "AvengeMedia";
       repo = "dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dankMaterialShell = {
+
+    dms = {
       type = "github";
       owner = "AvengeMedia";
       repo = "DankMaterialShell";
@@ -52,11 +38,25 @@
         dgop.follows = "dgop";
       };
     };
+
     helix = {
       type = "github";
       owner = "helix-editor";
       repo = "helix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri = {
+      type = "github";
+      owner = "sodiboo";
+      repo = "niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    declarative-flatpak = {
+      type = "github";
+      owner = "in-a-dil-emma";
+      repo = "declarative-flatpak";
     };
   };
 
@@ -64,26 +64,19 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        ./hardware-configuration.nix
-        ./modules
-        {
-          imports = [
-            inputs.home-manager.nixosModules.default
-          ];
-
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-          };
-        }
-      ];
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    lib = nixpkgs.lib;
+  in {
+    nixosConfigurations = {
+      seer = lib.nixosSystem {
+        inherit system;
+        modules = [
+          (import ./common {inherit system pkgs lib inputs;})
+          (import ./hosts/seer {inherit lib inputs;})
+        ];
+      };
     };
   };
 }

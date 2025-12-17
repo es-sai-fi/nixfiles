@@ -1,0 +1,13 @@
+{
+	"policies": {
+		"Preferences": {
+			"media.eme.enabled": true,
+			"privacy.globalprivacycontrol.enabled": true,
+			"webgl.disabled": false,
+			"extensions.update.enabled": false,
+			"pdfjs.forcePageColors": true,
+			"pdfjs.pageColorsBackground": "#1C1C1C",
+			"pdfjs.pageColorsForeground": "#E0E0E0"
+		}
+	}
+}
