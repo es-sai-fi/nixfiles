@@ -1,3 +1,3 @@
 function rebuild
-    sudo nixos-rebuild switch --flake ~/Projects/nixfiles/
+    nh os switch -H seer -t
 end
