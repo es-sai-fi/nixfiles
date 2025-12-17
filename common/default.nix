@@ -5,11 +5,13 @@
   inputs,
 }: let
   impermanenceModule = inputs.impermanence.nixosModules.default;
+  hjemModule = inputs.hjem.nixosModules.default;
 in {
   imports = [
     (import ./impermanence.nix {inherit lib impermanenceModule;})
     (import ./services {inherit lib inputs;})
     (import ./boot.nix {inherit pkgs;})
+    (import ./hjem.nix {inherit hjemModule;})
     (import ./packages.nix {inherit pkgs;})
     (import ./programs {inherit system pkgs lib inputs;})
     ./environment.nix

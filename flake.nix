@@ -15,6 +15,12 @@
       repo = "impermanence";
     };
 
+    hjem = {
+      type = "github";
+      owner = "feel-co";
+      repo = "hjem";
+    };
+
     aagl = {
       type = "github";
       owner = "ezKEa";

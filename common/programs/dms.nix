@@ -22,4 +22,11 @@
     enableCalendarEvents = false;
     enableAudioWavelength = false;
   };
+
+  hjem.users.es-sai-fi = {
+    xdg.config.files."DankMaterialShell/default-settings.json" = {
+    };
+    xdg.state.files."DankMaterialShell/default-session.json" = {
+    };
+  };
 }
