@@ -20,7 +20,7 @@
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
     fsType = "btrfs";
-    options = ["subvol=root" "ssd" "noatime"];
+    options = ["subvol=nix" "compress=zstd" "ssd" "noatime"];
   };
 
   fileSystems."/nix" = {
@@ -34,6 +34,13 @@
     neededForBoot = true;
     fsType = "btrfs";
     options = ["subvol=persist" "compress=zstd" "ssd" "noatime"];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-label/nixos";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = ["subvol=log" "compress=zstd" "ssd" "noatime"];
   };
 
   fileSystems."/boot" = {
