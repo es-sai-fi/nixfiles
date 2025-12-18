@@ -1,245 +1,269 @@
 binds {
     Alt+Print {
-        screenshot-window
+        screenshot-window;
     }
 
     Ctrl+Print {
-        screenshot-screen
+        screenshot-screen;
     }
 
     Print {
-        screenshot
+        screenshot;
     }
 
-    Mod+1 { focus-workspace 1 }
-    Mod+2 { focus-workspace 2 }
-    Mod+3 { focus-workspace 3 }
-    Mod+4 { focus-workspace 4 }
-    Mod+5 { focus-workspace 5 }
-    Mod+6 { focus-workspace 6 }
-    Mod+7 { focus-workspace 7 }
-    Mod+8 { focus-workspace 8 }
-    Mod+9 { focus-workspace 9 }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
 
-    Mod+Ctrl+1 { move-column-to-workspace 1 }
-    Mod+Ctrl+2 { move-column-to-workspace 2 }
-    Mod+Ctrl+3 { move-column-to-workspace 3 }
-    Mod+Ctrl+4 { move-column-to-workspace 4 }
-    Mod+Ctrl+5 { move-column-to-workspace 5 }
-    Mod+Ctrl+6 { move-column-to-workspace 6 }
-    Mod+Ctrl+7 { move-column-to-workspace 7 }
-    Mod+Ctrl+8 { move-column-to-workspace 8 }
-    Mod+Ctrl+9 { move-column-to-workspace 9 }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
 
-    Mod+H, Mod+Left {
-        focus-column-left
+    Mod+H {
+        focus-column-left;
     }
 
-    Mod+L, Mod+Right {
-        focus-column-right
+    Mod+Left {
+        focus-column-left;
     }
 
-    Mod+J, Mod+Down {
-        focus-window-or-workspace-down
+    Mod+L {
+        focus-column-right;
     }
 
-    Mod+K, Mod+Up {
-        focus-window-or-workspace-up
+    Mod+Right {
+        focus-column-right;
     }
 
-    Mod+Ctrl+H, Mod+Ctrl+Left {
-        move-column-left
+    Mod+J {
+        focus-window-or-workspace-down;
     }
 
-    Mod+Ctrl+L, Mod+Ctrl+Right {
-        move-column-right
+    Mod+Down {
+        focus-window-or-workspace-down;
+    }
+
+    Mod+K {
+        focus-window-or-workspace-up;
+    }
+
+    Mod+Up {
+        focus-window-or-workspace-up;
+    }
+
+    Mod+Ctrl+H {
+        move-column-left;
+    }
+
+    Mod+Ctrl+Left {
+        move-column-left;
+    }
+
+    Mod+Ctrl+L {
+        move-column-right;
+    }
+
+    Mod+Ctrl+Right {
+        move-column-right;
     }
 
     Mod+Ctrl+Down {
-        move-window-down
+        move-window-down;
     }
 
     Mod+Ctrl+Up {
-        move-window-up
+        move-window-up;
     }
 
     Mod+Ctrl+J {
-        move-window-down-or-to-workspace-down
+        move-window-down-or-to-workspace-down;
     }
 
     Mod+Ctrl+K {
-        move-window-up-or-to-workspace-up
+        move-window-up-or-to-workspace-up;
     }
 
     Mod+Ctrl+I {
-        move-column-to-workspace-up
+        move-column-to-workspace-up;
     }
 
     Mod+Ctrl+U {
-        move-column-to-workspace-down
+        move-column-to-workspace-down;
     }
 
     Mod+Comma {
-        consume-window-into-column
+        consume-window-into-column;
     }
 
     Mod+Period {
-        expel-window-from-column
+        expel-window-from-column;
     }
 
     Mod+BracketLeft {
-        consume-or-expel-window-left
+        consume-or-expel-window-left;
     }
 
     Mod+BracketRight {
-        consume-or-expel-window-right
+        consume-or-expel-window-right;
     }
 
     Mod+C {
-        center-column
+        center-column;
     }
 
     Mod+Ctrl+C {
-        center-visible-columns
+        center-visible-columns;
     }
 
     Mod+Equal {
-        set-column-width "+10%"
+        set-column-width "+10%";
     }
 
     Mod+Minus {
-        set-column-width "-10%"
+        set-column-width "-10%";
     }
 
     Mod+Shift+Equal {
-        set-window-height "+10%"
+        set-window-height "+10%";
     }
 
     Mod+Shift+Minus {
-        set-window-height "-10%"
+        set-window-height "-10%";
     }
 
     Mod+R {
-        switch-preset-column-width
+        switch-preset-column-width;
     }
 
     Mod+Shift+R {
-        switch-preset-window-height
+        switch-preset-window-height;
     }
 
     Mod+F {
-        maximize-column
+        maximize-column;
     }
 
     Mod+Shift+F {
-        fullscreen-window
+        fullscreen-window;
     }
 
     Mod+V {
-        toggle-window-floating
+        toggle-window-floating;
     }
 
     Mod+Shift+V {
-        switch-focus-between-floating-and-tiling
+        switch-focus-between-floating-and-tiling;
     }
 
     Mod+O repeat=false {
-        toggle-overview
+        toggle-overview;
     }
 
     Mod+Q repeat=false {
-        close-window
+        close-window;
     }
 
     Mod+Shift+E {
-        quit
+        quit;
     }
 
     Mod+WheelScrollDown cooldown-ms=150 {
-        focus-workspace-down
+        focus-workspace-down;
     }
 
     Mod+WheelScrollUp cooldown-ms=150 {
-        focus-workspace-up
+        focus-workspace-up;
     }
 
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 {
-        move-column-to-workspace-down
+        move-column-to-workspace-down;
     }
 
     Mod+Ctrl+WheelScrollUp cooldown-ms=150 {
-        move-column-to-workspace-up
+        move-column-to-workspace-up;
     }
 
     Mod+B {
-        spawn "firefox"
+        spawn "firefox";
     }
 
     Mod+T {
-        spawn "alacritty"
+        spawn "alacritty";
     }
 
     Mod+E {
-        spawn "alacritty" "-T" "hx" "-e" "fish" "-c" "hx"
+        spawn "alacritty" "-T" "hx" "-e" "fish" "-c" "hx";
     }
 
     Mod+Y {
-        spawn "alacritty" "-T" "yazi" "-e" "fish" "-c" "yazi"
+        spawn "alacritty" "-T" "yazi" "-e" "fish" "-c" "yazi";
     }
 
     Mod+Space {
-        spawn "dms" "ipc" "call" "spotlight" "toggle"
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
 
     Mod+Escape {
-        spawn "dms" "ipc" "call" "settings" "toggle"
+        spawn "dms" "ipc" "call" "settings" "toggle";
     }
 
     Mod+M {
-        spawn "dms" "ipc" "call" "processlist" "toggle"
+        spawn "dms" "ipc" "call" "processlist" "toggle";
     }
 
     Mod+N {
-        spawn "dms" "ipc" "call" "notifications" "toggle"
+        spawn "dms" "ipc" "call" "notifications" "toggle";
     }
 
     Mod+Shift+N {
-        spawn "dms" "ipc" "call" "notepad" "toggle"
+        spawn "dms" "ipc" "call" "notepad" "toggle";
     }
 
     Mod+Shift+P {
-        power-off-monitors
+        power-off-monitors;
     }
 
     Super+Shift+F1 {
-        spawn "alacritty" "-e" "obs-cmd" "recording" "start"
+        spawn "alacritty" "-e" "obs-cmd" "recording" "start";
     }
 
     Super+Shift+F2 {
-        spawn "alacritty" "-e" "obs-cmd" "recording" "stop"
+        spawn "alacritty" "-e" "obs-cmd" "recording" "stop";
     }
 
     Super+Shift+F3 {
-        spawn "alacritty" "-e" "obs-cmd" "recording" "pause"
+        spawn "alacritty" "-e" "obs-cmd" "recording" "pause";
     }
 
     Super+Shift+F4 {
-        spawn "alacritty" "-e" "obs-cmd" "recording" "resume"
+        spawn "alacritty" "-e" "obs-cmd" "recording" "resume";
     }
 
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "increment" "3"
+        spawn "dms" "ipc" "call" "audio" "increment" "3";
     }
 
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "decrement" "3"
+        spawn "dms" "ipc" "call" "audio" "decrement" "3";
     }
 
     XF86AudioMute allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "mute"
+        spawn "dms" "ipc" "call" "audio" "mute";
     }
 
     XF86AudioMicMute allow-when-locked=true {
-        spawn "dms" "ipc" "call" "audio" "micmute"
+        spawn "dms" "ipc" "call" "audio" "micmute";
     }
 }
