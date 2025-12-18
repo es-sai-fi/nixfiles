@@ -1,11 +1,12 @@
 {
   pkgs,
+  lib,
   niriModule,
   niriOverlay,
   niriPackage,
   xwaylandPackage,
 }: let
-  niriWrapped = import ../wrappers/niri {inherit pkgs niriPackage;};
+  niriWrapped = import ../wrappers/niri {inherit pkgs lib niriPackage;};
 in {
   imports = [niriModule];
 

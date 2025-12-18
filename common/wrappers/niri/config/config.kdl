@@ -1,0 +1,50 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,es"
+            model ""
+            rules ""
+            variant ""
+            options "grp:alt_shift_toggle"
+        }
+
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "window"
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+        accel-speed -0.200000
+        accel-profile "flat"
+    }
+}
+
+output "HDMI-A-1" {
+    scale 1
+    transform "normal"
+    mode "1920x1080@199.997000"
+}
+
+screenshot-path "~/Pictures/screenshots/Niri %Y-%m-%d %H-%M-%S.png"
+
+prefer-no-csd
+
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}

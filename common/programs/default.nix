@@ -24,7 +24,7 @@ in {
     (import ./fzf.nix {inherit pkgs;})
     (import ./git.nix {inherit pkgs;})
     (import ./helix.nix {inherit system pkgs lib helix;})
-    (import ./niri.nix {inherit pkgs niriModule niriOverlay niriPackage xwaylandPackage;})
+    (import ./niri.nix {inherit pkgs lib niriModule niriOverlay niriPackage xwaylandPackage;})
     (import ./tealdeer.nix {inherit pkgs;})
     ./dconf.nix
     ./nh.nix
