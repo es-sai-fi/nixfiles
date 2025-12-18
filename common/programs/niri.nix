@@ -1,20 +1,21 @@
 {
-  pkgs,
   lib,
-  niriModule,
-  niriOverlay,
-  niriPackage,
-  xwaylandPackage,
+  pkgs,
+  inputs,
+  ...
 }: let
-  niriWrapped = import ../wrappers/niri {inherit pkgs lib niriPackage;};
+  niriWrapped = import ../wrappers/niri {
+    inherit pkgs lib;
+    niriPackage = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+  };
 in {
-  imports = [niriModule];
+  imports = [inputs.niri.nixosModules.niri];
 
-  nixpkgs.overlays = [niriOverlay];
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   environment.systemPackages = with pkgs; [
     nautilus
-    xwaylandPackage
+    inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
   ];
 
   xdg.portal = {

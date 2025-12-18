@@ -1,4 +1,4 @@
-{pkgs}: let
+{pkgs, ...}: let
   fishWrapped = import ../wrappers/fish {inherit pkgs;};
 in {
   programs.fish = {

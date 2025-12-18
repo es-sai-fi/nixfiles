@@ -1,7 +1,4 @@
 {
-  lib,
-  inputs,
-}: {
   imports = [
     ./hardware-configuration.nix
     ./graphics.nix

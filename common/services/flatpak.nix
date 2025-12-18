@@ -1,8 +1,5 @@
-{
-  lib,
-  declarative-flatpak,
-}: {
-  imports = [declarative-flatpak.nixosModules.default];
+{inputs, ...}: {
+  imports = [inputs.declarative-flatpak.nixosModules.default];
 
   services.flatpak = {
     enable = true;

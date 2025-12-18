@@ -1,12 +1,12 @@
 {
-  system,
-  pkgs,
   lib,
-  helix,
+  pkgs,
+  inputs,
+  ...
 }: let
   helixWrapped = import ../wrappers/helix.nix {
     inherit pkgs lib;
-    helixPackage = helix.packages.${system}.default;
+    helixPackage = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 in {
   nix.settings = {
@@ -15,6 +15,7 @@ in {
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
     ];
   };
+
   environment = {
     systemPackages = [helixWrapped];
     sessionVariables.EDITOR = "hx";

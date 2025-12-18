@@ -1,7 +1,4 @@
-{
-  lib,
-  pkgs,
-}: {
+{pkgs, ...}: {
   programs.yazi = {
     enable = true;
     settings = {

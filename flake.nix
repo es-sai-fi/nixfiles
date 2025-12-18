@@ -70,17 +70,14 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    lib = nixpkgs.lib;
-  in {
+  } @ inputs: {
     nixosConfigurations = {
-      seer = lib.nixosSystem {
-        inherit system;
+      seer = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
-          (import ./common {inherit system pkgs lib inputs;})
-          (import ./hosts/seer {inherit lib inputs;})
+          ./common
+          ./hosts/seer
         ];
       };
     };

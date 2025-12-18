@@ -1,5 +1,6 @@
-{pkgs}: {
+{pkgs, ...}: {
   boot = {
+    # Taken from @llakala
     kernelParams = ["boot.shell_on_fail"];
     loader = {
       limine = {

@@ -1,35 +1,22 @@
 {
-  system,
-  pkgs,
-  lib,
-  inputs,
-}: let
-  inherit (inputs) aagl dms helix niri;
-  dmsModule = dms.nixosModules.dankMaterialShell;
-  greeterModule = dms.nixosModules.greeter;
-  niriModule = niri.nixosModules.niri;
-  niriOverlay = niri.overlays.niri;
-  niriPackage = niri.packages.${system}.niri-unstable;
-  xwaylandPackage = niri.packages.${system}.xwayland-satellite-unstable;
-in {
   imports = [
-    (import ./yazi {inherit pkgs lib;})
-    (import ./aagl.nix {inherit aagl;})
-    (import ./alacritty.nix {inherit pkgs;})
-    (import ./bat.nix {inherit pkgs;})
-    (import ./bottom.nix {inherit pkgs;})
-    (import ./dms.nix {inherit system pkgs dmsModule greeterModule;})
-    (import ./fish.nix {inherit pkgs;})
-    (import ./firefox.nix {inherit pkgs;})
-    (import ./fzf.nix {inherit pkgs;})
-    (import ./git.nix {inherit pkgs;})
-    (import ./helix.nix {inherit system pkgs lib helix;})
-    (import ./niri.nix {inherit pkgs lib niriModule niriOverlay niriPackage xwaylandPackage;})
-    (import ./tealdeer.nix {inherit pkgs;})
+    ./aagl.nix
+    ./alacritty.nix
+    ./bat.nix
+    ./bottom.nix
     ./dconf.nix
+    ./dms.nix
+    ./firefox.nix
+    ./fish.nix
+    ./fzf.nix
+    ./git.nix
+    ./helix.nix
     ./nh.nix
+    ./niri.nix
     ./pay-respects.nix
     ./starship.nix
+    ./tealdeer.nix
+    ./yazi
     ./zoxide.nix
   ];
 }

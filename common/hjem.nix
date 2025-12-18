@@ -1,5 +1,5 @@
-{hjemModule}: {
-  imports = [hjemModule];
+{inputs, ...}: {
+  imports = [inputs.hjem.nixosModules.hjem];
 
   hjem = {
     users = {

@@ -1,12 +1,14 @@
 {
-  system,
   pkgs,
-  dmsModule,
-  greeterModule,
+  inputs,
+  ...
 }: {
-  imports = [dmsModule greeterModule];
+  imports = with inputs; [
+    dms.nixosModules.dank-material-shell
+    dms.nixosModules.greeter
+  ];
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
     greeter = {
       enable = true;

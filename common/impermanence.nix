@@ -1,8 +1,9 @@
 {
   lib,
-  impermanenceModule,
+  inputs,
+  ...
 }: {
-  imports = [impermanenceModule];
+  imports = [inputs.impermanence.nixosModules.impermanence];
 
   # Taken from @NotAShelf
   boot.initrd.postDeviceCommands = lib.mkBefore ''

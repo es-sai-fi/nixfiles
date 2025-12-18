@@ -1,23 +1,14 @@
 {
-  system,
-  pkgs,
-  lib,
-  inputs,
-}: let
-  impermanenceModule = inputs.impermanence.nixosModules.default;
-  hjemModule = inputs.hjem.nixosModules.default;
-in {
   imports = [
-    (import ./impermanence.nix {inherit lib impermanenceModule;})
-    (import ./services {inherit lib inputs;})
-    (import ./boot.nix {inherit pkgs;})
-    (import ./hjem.nix {inherit hjemModule;})
-    (import ./packages.nix {inherit pkgs;})
-    (import ./programs {inherit system pkgs lib inputs;})
+    ./boot.nix
     ./environment.nix
+    ./hjem.nix
+    ./impermanence.nix
     ./locale.nix
     ./networking.nix
     ./nix.nix
+    ./packages.nix
+    ./programs
     ./security.nix
     ./users.nix
     ./virtualisation.nix
