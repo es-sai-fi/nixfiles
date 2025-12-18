@@ -242,7 +242,7 @@
 in
   pkgs.symlinkJoin {
     name = "helix-wrapped";
-    paths = [helixPackage];
+    paths = [package];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       mkdir $out/helix
