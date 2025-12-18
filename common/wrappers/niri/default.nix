@@ -1,17 +1,17 @@
 {
-  pkgs,
   lib,
-  niriPackage,
+  pkgs,
+  package,
 }: let
   # Taken from @Lunarnovaa
   niriConfigFile = pkgs.concatText "config.kdl" (lib.filesystem.listFilesRecursive ./config);
 in
   pkgs.symlinkJoin {
     name = "niri-wrapped";
-    paths = [niriPackage];
+    paths = [package];
     passthru = {
       inherit
-        (niriPackage)
+        (package)
         cargoBuildNoDefaultFeatures
         cargoBuildFeatures
         providedSessions

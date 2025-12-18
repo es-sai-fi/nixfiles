@@ -6,7 +6,7 @@
 }: let
   niriWrapped = import ../wrappers/niri {
     inherit pkgs lib;
-    niriPackage = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+    package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
   };
 in {
   imports = [inputs.niri.nixosModules.niri];

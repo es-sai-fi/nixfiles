@@ -6,7 +6,7 @@
 }: let
   helixWrapped = import ../wrappers/helix.nix {
     inherit pkgs lib;
-    helixPackage = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 in {
   nix.settings = {

@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  helixPackage,
+  package,
 }: let
   toml = pkgs.formats.toml {};
   helixConfigFile = toml.generate "helix-config.toml" {
