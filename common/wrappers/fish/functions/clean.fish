@@ -1,3 +1,3 @@
 function clean
-    sudo nh clean all --optimise
+    sudo nh clean all
 end
