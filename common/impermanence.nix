@@ -4,7 +4,7 @@
 }: {
   imports = [impermanenceModule];
 
-  # Script taken from raf
+  # Taken from @NotAShelf
   boot.initrd.postDeviceCommands = lib.mkBefore ''
     mkdir -p /mnt
 

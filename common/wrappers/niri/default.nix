@@ -3,6 +3,7 @@
   lib,
   niriPackage,
 }: let
+  # Taken from @Lunarnovaa
   niriConfigFile = pkgs.concatText "config.kdl" (lib.filesystem.listFilesRecursive ./config);
 in
   pkgs.symlinkJoin {
