@@ -13,6 +13,7 @@
   xwaylandPackage = niri.packages.${system}.xwayland-satellite-unstable;
 in {
   imports = [
+    (import ./yazi {inherit pkgs lib;})
     (import ./aagl.nix {inherit aagl;})
     (import ./alacritty.nix {inherit pkgs;})
     (import ./bat.nix {inherit pkgs;})
@@ -25,7 +26,6 @@ in {
     (import ./helix.nix {inherit system pkgs lib helix;})
     (import ./niri.nix {inherit pkgs niriModule niriOverlay niriPackage xwaylandPackage;})
     (import ./tealdeer.nix {inherit pkgs;})
-    (import ./yazi.nix {inherit pkgs lib;})
     ./dconf.nix
     ./nh.nix
     ./pay-respects.nix
